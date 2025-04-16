@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mind_bridge/common/TconstantText.dart';
+import 'package:mind_bridge/entry.dart';
+import 'package:mind_bridge/utils/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,21 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: Tconstanttext.appName,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(),
+      theme: MindBridge.lightTheme,
+      darkTheme: MindBridge.darkTheme,
+      themeMode: ThemeMode.system,
+      home: EntryScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
   }
 }
